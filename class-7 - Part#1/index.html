@@ -1,0 +1,96 @@
+<html>
+    <head>
+        <title>Understanding JS</title>
+    </head>
+    <style>
+        body{text-align: center; margin-top: 100px;}
+        fieldset{width: 500px; margin: 0 auto;}
+    </style>
+    <body>
+        
+        <h1>JavaScript Class #7</h1>
+        <h3> Output is in Console.log</h3>
+
+        <br>
+        <form action="#">
+            <fieldset>
+                <legend>Calculator</legend>
+                <br/>
+                <div>
+                    <label for="#">Number1</label>
+                    <input type="number" id="numberOne" value= 0>
+                </div>
+                <br/>
+                <div>
+                    <label for="#">Number2</label>
+                    <input type="number" id="numberTwo" value= 0>
+                </div>
+                <br/>
+                <button type="button" id="add" >Add</button>
+                <br/><br/>
+                <div>
+                    <label for="#">Result</label>
+                    <input type="number" id="result">
+                </div>
+            </fieldset>
+        </form>
+
+        <button type = "button" onclick= showMyCar()> Car Reg No</button>
+        <script>
+            // Calculator//
+            function add(){
+                let number1 = document.getElementById("numberOne");
+                let number2 = document.getElementById("numberTwo");
+                let showResult = document.getElementById("result");
+                //console.log(number1.value);
+                //console.log(number2.value);
+
+                showResult.value = parseInt(number1.value) + parseInt(number2.value);
+                //console.log(showResult.value);
+            }
+            let btn = document.getElementById('add');
+            btn.addEventListener('click', add, false);
+            //Defining a function
+            function add2numbers(number1, number2){
+                let result = number1 + number2; // (+) overloader operator
+                return result;
+            };
+            // function call
+            let result = add2numbers(2, 3);
+            console.log(result);
+                result = add2numbers(21,31); //reassign
+            console.log(result);
+
+
+
+            // Declaring and initializing an array type variable
+            let countries = [];
+
+            countries[0] = 'Bangladesh'; // assign
+            countries[1] = 'USA';
+            countries[2] = 'UK';
+
+            for(countryIndx in countries){
+                console.log(countries[countryIndx]);
+                if(countryIndx == 2){
+                    console.log('Hello');
+                }
+            };
+
+            // object literal
+            let myCar = {
+                'registration_no' : "ka-2345",
+                "make" : "Toyota",
+                "model" : "Xcorola",
+                "year" : 2019
+            };
+
+            function showMyCar(){
+                alert ("My Car Reg No is " + myCar.registration_no);
+            }
+
+            
+
+        </script>
+    </body>
+</html>
